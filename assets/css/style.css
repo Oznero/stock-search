@@ -1,0 +1,41 @@
+body {
+    color: #333;
+  }
+  
+  header {
+    background: #00BFFF;
+    font-weight: bold;
+    color: white;
+    padding: 7px 20px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  
+  h1, h2 {
+    font-weight: 800;
+    text-align: center;
+  }
+  
+  main {
+    width: 800px;
+    margin: 0 auto;
+  }
+  
+  button {
+    margin: 5px;
+    color: #333;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  /*
+  #stock-data {
+    border: 1px solid #333;
+    height: 340px;
+    padding: 5px;
+    background: white;
+    margin-bottom: 10px;
+  }
+  */
+  
+  

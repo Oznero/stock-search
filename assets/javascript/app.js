@@ -1,8 +1,47 @@
-// CHALLENGE:
-// Modify the logic to add rows for two more comapnies of your choice.
+const stocksList = [
+    'GE',
+    'NOW',
+    'AAPL',
+    'MSFT',
+    'DIS',
+    'OKTA',
+    'SONO'
+];
 
-// Sets up our queryURL to retrieve information for AAPL, FB, and TSLA stocks
-const queryURL = 'https://api.iextrading.com/1.0/stock/market/batch?symbols=aapl,fb,tsla&types=quote';
+function renderStocks(stockName) {
+    $('#stock-data').empty();
+    const queryURL = `https://api.iextrading.com/1.0/stock/${stockName}/batch?types=quote,news,chart&range=1m&last=1`;
+    $.ajax({
+        url: queryURL,
+        method: 'GET'
+    }).then(function (response) {
+        console.log(response.quote.companyName);
+        let text = $('#stock-data').text(response.quote.companyName);
+        text.append(text);
+        /*
+        const divRow = $('<div class="row">');
+        const companyName = $('<div class="col-lg-12').text(response.quote.companyName);
+        divRow.append(companyName);
+        */
+    });
+}
+
+
+const renderButtons = function () {
+    for (let i = 0; i < stocksList.length; i++) {
+        $('#buttons').append(`<li><button class="btn btn-outline-info btn-lg btn-${i}">${stocksList[i]}</button></li>`);
+        $(`.btn-${[i]}`).on('click', function () {
+            renderStocks(stocksList[i]);
+        });
+    }
+}
+renderButtons();
+
+
+
+
+/*
+//const queryURL = 'https://api.iextrading.com/1.0/stock/market/batch?symbols=aapl,fb,tsla&types=quote';
 
 $.ajax({
   url: queryURL,
@@ -37,4 +76,6 @@ $.ajax({
 
   // Append the rows to the table body
   tBody.append(tRow1, tRow2, tRow3);
+
 });
+*/
