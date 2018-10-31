@@ -9,15 +9,20 @@ const stocksList = [
 ];
 
 function renderStocks(stockName) {
-    $('#stock-data').empty();
-    const queryURL = `https://api.iextrading.com/1.0/stock/${stockName}/batch?types=quote,news,chart&range=1m&last=1`;
+    const queryURL = `https://api.iextrading.com/1.0/stock/${stockName}/batch?types=logo,quote,news,chart&range=1m&last=1`;
     $.ajax({
         url: queryURL,
         method: 'GET'
     }).then(function (response) {
         console.log(response.quote.companyName);
-        let text = $('#stock-data').text(response.quote.companyName);
+        let text = $('#company-name').text(response.quote.companyName);
+        let logo = $('#logo').attr('src', response.logo.url);
+
+
+
         text.append(text);
+        logo.append(logo);
+
         /*
         const divRow = $('<div class="row">');
         const companyName = $('<div class="col-lg-12').text(response.quote.companyName);
