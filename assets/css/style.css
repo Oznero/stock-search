@@ -16,6 +16,9 @@ body {
     font-weight: 800;
     text-align: center;
   }
+  h2 {
+    margin-bottom: 50px;
+  }
   
   main {
     width: 800px;
