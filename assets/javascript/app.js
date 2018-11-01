@@ -18,7 +18,7 @@ function renderStocks(stockName) {
 
         $('#company-name').text(response.quote.companyName);
         $('#logo').attr('src', response.logo.url);
-        $('#latest-price').text(response.quote.latestPrice);
+        $('#latest-price').text(`$${response.quote.latestPrice}`);
         $('#company-news').empty();
 
         for (i = 0; i < response.news.length; i++) {
