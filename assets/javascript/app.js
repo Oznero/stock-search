@@ -14,13 +14,10 @@ function renderStocks(stockName) {
         url: queryURL,
         method: 'GET'
     }).then(function (response) {
-        let text = $('#company-name').text(response.quote.companyName);
-        let logo = $('#logo').attr('src', response.logo.url);
-        let price = $('#latest-price').text(response.quote.latestPrice);
+        $('#company-name').text(response.quote.companyName);
+        $('#logo').attr('src', response.logo.url);
+        $('#latest-price').text(response.quote.latestPrice);
 
-        text.append(text);
-        logo.append(logo);
-        price.append(price);
     });
 }
 
