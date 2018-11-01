@@ -16,7 +16,7 @@ function renderStocks(stockName) {
         method: 'GET'
     }).then(function (response) {
 
-        $('#company-name').text(response.quote.companyName);
+        $('#company-name').html(`<h3>${response.quote.companyName}</h3>`);
         $('#logo').attr('src', response.logo.url);
         $('#latest-price').text(`$${response.quote.latestPrice}`);
         $('#company-news').empty();
