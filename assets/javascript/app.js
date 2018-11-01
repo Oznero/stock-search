@@ -43,7 +43,7 @@ function renderStocks(stockName) {
 
 const renderButtons = function () {
     for (let i = 0; i < stocksList.length; i++) {
-        $('#buttons').append(`<li><button class="btn btn-outline-info btn-lg btn-${i}">${stocksList[i]}</button></li>`);
+        $('#buttons').append(`<li><button class="btn-block btn btn-outline-info btn-lg btn-${i}">${stocksList[i]}</button></li>`);
         $(`.btn-${[i]}`).on('click', function () {
             renderStocks(stocksList[i]);
         });
