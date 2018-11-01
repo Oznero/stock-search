@@ -28,30 +28,34 @@
             </div>
             <div class="row">
                 <!-- Buttons div -->
-                <div class="col-sm-2 d-flex justify-content-left">
-                    <ul>
-                        <li id="buttons"></li>
-                    </ul>
-                </div>
-                <!-- Data div -->
-                <div class="col-lg-10" id="stock-data">
-                    <div class="row d-flex">
-                        <div class="p-2 flex-fill col-sm-9">
-                            <div id="company-name" class="d-flex justify-content-center"></div>
-                            <div id="latest-price" class="d-flex justify-content-center"></div>
-                        </div>
-                        <div class="p-2 flex-fill col-sm-3">
-                            <div id="company-logo" class="d-flex justify-content-end">
-                                <img id="logo">
-                            </div>
-                        </div>
-                        <div id="company-news" class="p2 flex-fill col-sm-12"></div>
+                <form>
+                    <label for="stock-search">Add stock</label>
+                    <input id="stock-symbol" type="text" class="form-control" placeholder="Stock symbol">
+                    <button id="stock-submit" type="button" class="btn btn-primary">Submit</button>
+                </form>
+                <ul>
+                    <li id="buttons"></li>
+                </ul>
+            </div>
+            <!-- Data div -->
+            <div class="col-lg-10" id="stock-data">
+                <div class="row d-flex">
+                    <div class="p-2 flex-fill col-sm-9">
+                        <div id="company-name" class="d-flex justify-content-center"></div>
+                        <div id="latest-price" class="d-flex justify-content-center"></div>
                     </div>
+                    <div class="p-2 flex-fill col-sm-3">
+                        <div id="company-logo" class="d-flex justify-content-end">
+                            <img id="logo">
+                        </div>
+                    </div>
+                    <div id="company-news" class="p2 flex-fill col-sm-12"></div>
                 </div>
             </div>
-        </main>
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-        <script src="./assets/javascript/app.js"></script>
+    </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="./assets/javascript/app.js"></script>
 </body>
 
 </html>

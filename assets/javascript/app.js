@@ -50,3 +50,25 @@ const renderButtons = function () {
     }
 }
 renderButtons();
+
+$('#stock-submit').on('click', function () {
+    let stockSymbol = $('#stock-symbol').val().toUpperCase();
+    const queryURL = 'https://api.iextrading.com/1.0/ref-data/symbols';
+    $.ajax({
+        url: queryURL,
+        method: 'GET'
+    }).then(function (response) {
+        $('#stock-symbol').val('');
+        let validationList = [];
+        for (let i = 0; i < response.length; i++) {
+            validationList.push(response[i].symbol);
+        }
+        for (let x = 0; x < validationList.length; x++) {
+            if (stockSymbol === validationList[x]) {
+                stocksList.push(stockSymbol);
+                $('#buttons').empty();
+                renderButtons();
+            }
+        }
+    });
+});
